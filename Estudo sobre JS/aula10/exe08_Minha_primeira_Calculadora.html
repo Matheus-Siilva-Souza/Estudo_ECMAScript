@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../estilo.css" media="screen" />
+    <title>Minha primeira Calculadora</title>
+</head>
+<body>
+    <div class="quadro">
+        <h1>Calculadora</h1>
+        <input type="number" name="n1" id="n1" class="inp">
+            <select id="conta">
+                <option value="mais" selected>+</option>
+                <option value="menos">-</option>
+                <option value="mult">*</option>
+                <option value="divs">/</option>
+                <option value="resto">%</option>
+            </select>
+        <input type="number" name="n2" id="n2" class="inp">
+        <input type="button" value="Calcular" onclick="calcular()" >
+        <br>
+        <h1 id="resu">Resultado</h1>
+    </div>
+   <script>
+       function calcular(){
+            //pega o valor do SELECT
+            var sele = document.getElementById('conta')
+            var value = sele.options[sele.selectedIndex].value
+	        console.log(value)
+            //pega o valor passado para efetuar a conta
+            var tx1 = window.document.getElementById('n1')
+            var tx2 = window.document.getElementById('n2')
+            var res = window.document.getElementById('resu')
+            var n1 = Number(tx1.value)
+            var n2 = Number(tx2.value)
+            //seleciona o caso escolhido pelo usuario
+            switch (value) {
+                case 'mais':
+                    var s = n1 + n2
+                    break;
+                case 'menos':
+                    var s = n1 - n2
+                    break;
+                case 'mult':
+                    var s = n1 * n2
+                    break; 
+                case 'divs':
+                    var s = n1 / n2    
+                    break;
+                case 'resto':
+                    var s = n1 % n2    
+                    break;
+                default:
+                    break;
+            }
+            res.innerHTML = `O resultado é ${s}`
+       }
+   </script>
+</body>
+</html>

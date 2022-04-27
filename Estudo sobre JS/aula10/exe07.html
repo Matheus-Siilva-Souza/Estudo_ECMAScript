@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../estilo.css" media="screen" />
+    <title>Aula 09 ( DOM )</title>
+</head>
+<body>
+    <div id="quadro">
+        Clique em mim
+    </div>
+   <script>
+       var a = window.document.getElementById('quadro')
+            a.addEventListener('click',cor)
+            a.addEventListener('mouseenter',entre)
+            a.addEventListener('mouseout',saida)
+       function cor(){
+            a.innerHTML = 'Clicado'
+            a.style.background = 'blue'
+            a.style.color = 'black'
+       }
+       function entre() {
+            a.style.background = '#5a4a4a'
+            a.style.color = 'azure'
+       }
+       function saida(){
+            a.style.background = 'black'
+            a.style.color = 'white'
+       }
+   </script>
+</body>
+</html>

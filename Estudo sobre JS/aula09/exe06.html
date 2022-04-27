@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../estilo.css" media="screen" />
+    <title>Aula 09 ( DOM )</title>
+</head>
+<body>
+    <div class="quadro">
+        <h1>Iniciando estudos com o DOM</h1>
+        <p id="resul">Aqui vai o resultado</p>
+        <div class="msg">Clique em mim</div>
+
+    </div>
+    <script>
+        //Pegando elementos da pagina por TAG
+        var titulo = window.document.getElementsByTagName('h1')[0]
+        var geral = window.document.getElementsByTagName('body')[0]
+            geral.style.background= 'black'
+            titulo.style.fontSize = '50px' 
+        //Pegando elemntos da pagina por CLASS
+        var quadro = window.document.getElementsByClassName('quadro')[0]
+        var ms = window.document.getElementsByClassName('msg')[0]
+            quadro.style.background = 'azure'
+            quadro.style.color = 'black'
+            ms.innerHTML = 'Em processamento...'
+        //Pegando elementos da pagina por QUERY SELECTOR
+        var d = window.document.querySelector('p#resul')
+            d.style.fontSize = '40px'
+            d.innerHTML = 'Esse e o resultado'
+    </script>
+</body>
+</html>
